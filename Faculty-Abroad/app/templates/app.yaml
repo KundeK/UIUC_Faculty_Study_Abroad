@@ -1,0 +1,17 @@
+runtime: python311
+
+instance_class: F1
+
+env_variables:
+  MYSQL_USER: 'root'
+  MYSQL_PASSWORD: 'databaes034'
+  MYSQL_DB: 'mydatabase'
+  MYSQL_HOST: '34.16.49.37'
+  MYSQL_PORT: '3306'
+
+handlers:
+- url: /script
+  static_dir: static/script
+
+- url: /styles
+  static_dir: static/styles

@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>Faculty Abroad Connect</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="{{ url_for('static', filename='images/UIUC.jpg') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="/">UIUC Study Abroad for Faculty</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="/webapp">Faculty Abroad App</a></li>
+<!--						<li>-->
+							<!--								<a href="#">Layouts</a>-->
+							<!--								<ul>-->
+							<!--									<li><a href="left-sidebar.html">Left Sidebar</a></li>-->
+							<!--									<li><a href="right-sidebar.html">Right Sidebar</a></li>-->
+							<!--									<li><a href="no-sidebar.html">No Sidebar</a></li>-->
+							<!--									<li>-->
+							<!--										<a href="#">Submenu</a>-->
+							<!--										<ul>-->
+							<!--											<li><a href="#">Option 1</a></li>-->
+							<!--											<li><a href="#">Option 2</a></li>-->
+							<!--											<li><a href="#">Option 3</a></li>-->
+							<!--											<li><a href="#">Option 4</a></li>-->
+							<!--										</ul>-->
+							<!--									</li>-->
+							<!--								</ul>-->
+<!--						</li>-->
+<!--						<li><a href="destinations.html">Destinations</a></li>-->
+<!--						<li><a href="housing.html">Housing</a></li>-->
+<!--						<li><a href="schools.html">Schools</a></li>-->
+						<!--							<li><a href="elements.html">Courses</a></li>-->
+
+<!--						<li><a href="#" class="button primary">Log In</a></li>-->
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Faculty Abroad Connect</h2>
+							<p>Create, Read, Update and Delete Study Abroad experiences.</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+<!--								<a href="#" class="image fit"><img src="{{ url_for('static', filename='images/nz1.webp') }}" alt="" /></a>-->
+
+						<div class="container">
+							<!-- <div>
+								<button style="text-align: right; display: flex; align-items: center; justify-content: center" type="button" class="button primary large" data-bs-toggle="modal" data-bs-target="#sp-modal" data-source="Stored Procedure">Generate University and Subject Ideas</button>
+								<script>
+									// JavaScript function to refresh the page
+									function refreshPage() {
+									location.reload();
+									}
+								</script>
+							</div> -->
+							<button style="text-align: right; display: flex; align-items: center; justify-content: center" type="button" class="button primary large" onclick="refreshPage()">Generate Ideas for Univerisites</button>
+
+							<script>
+							// JavaScript function to refresh the page
+							function refreshPage() {
+								location.reload();
+							}
+							</script>
+
+							<table class="table">
+								<thead>
+								<tr>
+									<th class="sp_uni">Univeristy</th>
+									<th class="sp_subject">Subject</th>
+									<th class="sp_prop">Subject Proportion</th>
+								</tr>
+								</thead>
+
+								<tbody>
+								{% for rand_uni in rand_unis %}
+								<tr>
+									<td>{{rand_uni.university}}</td>
+									<td>{{rand_uni.subject}}</td>
+									<td>{{rand_uni.subject_percentage}}</td>
+								</tr>
+								{% endfor %}
+
+								</tbody>
+							</table>
+
+						</div>
+
+
+
+								<div class="container">
+
+									<div style="display: grid; grid-template-columns: 5fr 15fr 1fr; align-items: center; gap: 10px;">
+
+
+										<div>
+											<select id="columnSelect" style="padding: 5px; display: inline-block; text-align: left;">
+												<option value="0">Experience ID</option>
+												<option value="1">First Name</option>
+												<option value="2">Last Name</option>
+												<option value="3">Course</option>
+												<option value="4">Semester</option>
+												<option value="5">Year</option>
+												<option value="6">University</option>
+											</select>
+										</div>
+
+
+										<div>
+											<input class="search-bar" type="text" id="searchInput" placeholder="Search..." style="padding: 5px; display: inline-block; text-align: left; flex-grow: 1; margin-right: auto;" />
+										</div>
+
+										<div>
+											<button style="text-align: right; margin-left: auto" type="button" class="button primary small" data-bs-toggle="modal" data-bs-target="#task-modal" data-source="New Experience">Add Experience</button>
+										</div>
+
+
+
+									</div>
+
+
+
+
+<!--									<div id="expand-box-header">-->
+<!--										<span style="float: left;">-->
+<!--											<select id="columnSelect" style="padding: 5px; width: 300px; display: inline-block; text-align: left;">-->
+<!--												<option value="0">Experience ID</option>-->
+<!--												<option value="1">First Name</option>-->
+<!--												<option value="2">Last Name</option>-->
+<!--												<option value="3">Course</option>-->
+<!--												<option value="4">Semester</option>-->
+<!--												<option value="5">Year</option>-->
+<!--												<option value="6">University</option>-->
+<!--											</select>-->
+<!--										</span>-->
+
+<!--										<span>-->
+
+<!--											<input class="search-bar" type="text" id="searchInput" placeholder="Search..." style="padding: 5px; max-width: 150px; display: inline-block; text-align: left; flex-grow: 1; margin-right: auto;" />-->
+
+<!--										</span>-->
+
+<!--										<span style="float: right;">-->
+<!--											<button style="text-align: right; margin-left: auto" type="button" class="button primary small" data-bs-toggle="modal" data-bs-target="#task-modal" data-source="New Experience">Add Experience</button>-->
+
+
+<!--										</span>-->
+<!--										<div style="clear:both;"></div>-->
+<!--									</div>-->
+
+
+									<!--									<div style="text-align: left;">-->
+
+
+
+<!--									</div>-->
+
+
+
+
+
+									<!-- Button trigger modal -->
+									<div style="text-align: right;">
+										</br>
+									</div>
+
+
+									<div class="modal fade" id="task-modal" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="Label">Add an Experience</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+
+												<div class="modal-body">
+													<div class="input-group mb-3">
+														<span class="input-group-text" id="task-form-display">First Name</span>
+														<input type="text" class="form-first_name" placeholder="Abdu" aria-label="first-name" aria-describedby="basic-addon1">
+													</div>
+													<div class="input-group mb-3">
+														<span class="input-group-text" id="task-form-display">Last Name</span>
+														<input type="text" class="form-last_name" placeholder="Alawani" aria-label="last-name" aria-describedby="basic-addon1">
+													</div>
+													<div class="input-group mb-3">
+														<span class="input-group-text" id="task-form-display">Course</span>
+														<input type="text" class="form-course" placeholder="CS 411" aria-label="course" aria-describedby="basic-addon1">
+													</div>
+													<div class="input-group mb-3">
+														<span class="input-group-text" id="task-form-display">Semester</span>
+														<input type="text" class="form-semester" placeholder="Fall/Spring/Summer" aria-label="semester" aria-describedby="basic-addon1">
+													</div>
+													<div class="input-group mb-3">
+														<span class="input-group-text" id="task-form-display">Year</span>
+														<input type="text" class="form-year" placeholder="i.e. 2023" aria-label="year" aria-describedby="basic-addon1">
+													</div>
+													<!-- <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="task-form-display">University</span>
+                                                        <input type="text" class="form-university" placeholder="Oxford Univeristy" aria-label="uni" aria-describedby="basic-addon1">
+                                                    </div> -->
+													<!-- <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="task-form-display">Blog</span>
+                                                        <input type="text" class="form-blog" placeholder="Enter details of your experience." aria-label="uni" aria-describedby="basic-addon1">
+                                                    </div> -->
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="button btn-secondary fit" data-bs-dismiss="modal" style="margin-top: 10px">Close</button>
+													<button id="submit-task" type="button" class="button primary btn-primary fit" style="margin-top: 10px">Save changes</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								</br>
+
+								<!--Todo Table-->
+								<div class="container table-responsive">
+									<table class="table">
+										<thead>
+										<tr>
+											<th class="expId">ExperienceID</th>
+											<th class="first_name">First Name</th>
+											<th class="last_name">Last Name</th>
+											<th class="course">Course</th>
+											<th class="semester">Semester</th>
+											<th class="year">Year</th>
+											<th class="uni">University</th>
+											<th class="update">Edit</th>
+											<th class="remove">Remove</th>
+										</tr>
+										</thead>
+
+										<tbody>
+										{% for item in items %}
+										<tr>
+											<td>{{item.expId}}</td>
+											<td>{{item.first_name}}</td>
+											<td>{{item.last_name}}</td>
+											<td>{{item.course}}</td>
+											<td>{{item.semester}}</td>
+											<td>{{item.year}}</td>
+											<td>{{item.uni}}</td>
+
+
+											<!-- {% if item.status == "In Progress" %}
+                                                <td><button type="button" class="btn btn-outline-warning btn-sm state" data-source="{{item.id}}">{{item.status}}</button></td>
+                                            {%endif%}
+                                            {% if item.status == "Todo" %}
+                                                <td><button type="button" class="btn btn-outline-secondary btn-sm state" data-source="{{item.id}}">{{item.status}}</button></td>
+                                            {%endif%}
+                                            {% if item.status == "Complete" %}
+                                                <td><button type="button" class="btn btn-outline-success btn-sm state" data-source="{{item.id}}">{{item.status}}</button></td>
+                                            {%endif%} -->
+
+											<td><button type="button" class="button primary" data-bs-toggle="modal" data-bs-target="#task-modal" data-source="{{item.expId}}" data-first_name="{{item.first_name}}" data-last_name="{{item.last_name}}" data-course="{{item.course}}" data-semester="{{item.semester}}" data-year="{{item.year}}"><i class="fa fa-pen fa-1" aria-hidden="true"></i></button></td>
+
+											<td><button class="button remove" data-source="{{item.expId}}" type="button"><i class="fa fa-trash fa-1" aria-hidden="true"></i></button></td>
+										</tr>
+										{% endfor %}
+
+										</tbody>
+									</table>
+								</div>
+							</section>
+
+					</div>
+				</div>
+
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<!--						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>-->
+						<!--						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>-->
+						<!--						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
+						<!--						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>-->
+						<li><a href="https://github.com/cs411-alawini/fa23-cs411-team034-DataBaes" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:facultystudyabroad@illinois.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; UIUC Study Abroad for Faculty. All rights reserved.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+			<script src="{{ url_for('static', filename='script/modal.js') }}"></script>
+
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					var searchInput = document.getElementById('searchInput');
+					var columnSelect = document.getElementById('columnSelect');
+		
+					searchInput.addEventListener('keyup', function() {
+						var searchText = this.value.toLowerCase();
+						var columnIndex = columnSelect.value;
+						var rows = document.querySelectorAll(".table tbody tr");
+		
+						rows.forEach(row => {
+							var cells = row.querySelectorAll("td");
+							var cellText = cells[columnIndex].textContent.toLowerCase();
+							row.style.display = cellText.includes(searchText) ? "" : "none";
+						});
+					});
+				});
+			</script>
+			
+	</body>
+</html>
