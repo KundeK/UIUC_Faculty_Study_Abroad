@@ -1,6 +1,6 @@
 # Project Summary
 
-Faculty Abroad Connect is a Flask web application that enables UIUC faculty to create a variety of Study and Research Abroad opportunities worldwide. The UIUC faculty, composed of talented scholars and professionals, can use this web application to connect with different institutions, universities, and students from abroad. With web pages that allow faculty to survey and create opportunities abroad, they can explore their professions and help advance the scientific condition of the world through their passions.
+UIUC Faculty Study Abroad Connect is a Flask web application that enables UIUC faculty to create a variety of Study and Research Abroad opportunities worldwide. The UIUC faculty, composed of talented scholars and professionals, can use this web application to connect with different institutions, universities, and students from abroad. With web pages that allow faculty to survey and create opportunities abroad, they can explore their professions and help advance the scientific condition of the world through their passions.
 
 ## Features
 
